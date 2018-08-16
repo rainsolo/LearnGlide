@@ -23,9 +23,7 @@ public class GlideTargetActivity extends AppCompatActivity {
         ivImgShow = findViewById(R.id.iv_img_show);
         targetLayout = findViewById(R.id.targetLayout);
 
-        findViewById(R.id.btn_load_img).setOnClickListener(v -> {
-            GlideCustomerTarget();
-        });
+        findViewById(R.id.btn_load_img).setOnClickListener(v -> GlideCustomerTarget());
     }
 
     private void Glideinto() {

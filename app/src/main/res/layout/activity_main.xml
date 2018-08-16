@@ -1,17 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:divider="@drawable/divider_1"
+    android:orientation="vertical"
+    android:showDividers="middle"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tv_glide_target"
         style="@style/SelectItem"
+        android:onClick="clickGlideBasicUsage"
+        android:text="Glide - 基础用法"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        style="@style/SelectItem"
+        android:onClick="clickGlideTarget"
         android:text="Glide - 自定义Target"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        style="@style/SelectItem"
+        android:onClick="clickGlideTransform"
+        android:text="Glide - 图片Transform"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        style="@style/SelectItem"
+        android:onClick="clickGlideProgress"
+        android:text="Glide - 带进度条显示"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</LinearLayout>

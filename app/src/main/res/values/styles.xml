@@ -25,4 +25,15 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="TransParentTheme" parent="AppTheme.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:backgroundDimAmount">0.4</item><!-- 灰度 -->
+        <item name="android:backgroundDimEnabled">true</item><!-- 模糊 -->
+        <!--<item name="android:windowAnimationStyle">@null</item>-->
+        <!--<item name="android:windowEnterAnimation">@anim/abc_popup_enter_1</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/abc_popup_exit_1</item>-->
+    </style>
 </resources>

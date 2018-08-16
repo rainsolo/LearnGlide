@@ -4,13 +4,19 @@ import android.content.Context;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.GlideBuilder;
+import com.bumptech.glide.integration.okhttp3.OkHttpUrlLoader;
 import com.bumptech.glide.load.DecodeFormat;
 import com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool;
 import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
 import com.bumptech.glide.load.engine.cache.LruResourceCache;
+import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.module.GlideModule;
 import com.bumptech.glide.request.target.ViewTarget;
 import com.example.learnglide.R;
+
+import java.io.InputStream;
+
+import okhttp3.OkHttpClient;
 
 
 public class GlideModelConfig implements GlideModule {
@@ -44,7 +50,10 @@ public class GlideModelConfig implements GlideModule {
 
     @Override
     public void registerComponents(Context context, Glide glide) {
-//        glide.register(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory());
+        OkHttpClient.Builder builder = new OkHttpClient.Builder();
+        builder.addInterceptor(new ProgressInterceptor());
+        OkHttpClient okHttpClient = builder.build();
+        glide.register(GlideUrl.class, InputStream.class, new OkHttpUrlLoader.Factory(okHttpClient));
     }
 
 }
